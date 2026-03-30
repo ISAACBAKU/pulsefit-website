@@ -59,3 +59,7 @@ This project demonstrates my ability to:
 - Replace JSON storage with a database
 - Add admin dashboard for submissions
 - Improve branded HTML email templates
+
+## Author
+
+Isaac Baku
