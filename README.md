@@ -1,3 +1,9 @@
+## Screenshots
+
+![Homepage](screenshots/home.png)
+![Mobile](screenshots/mobile.png)
+![Contact](screenshots/contact.png)
+
 # PulseFit Website
 
 A full-stack fitness coaching website built as a realistic client-style portfolio project.
