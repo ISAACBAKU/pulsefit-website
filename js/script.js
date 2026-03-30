@@ -86,7 +86,7 @@ if (contactForm) {
     };
 
     try {
-      const response = await fetch("https://pulsefit-backend-iz0m.onrender.com", {
+      const response = await fetch("https://pulsefit-backend-iz0m.onrender.com/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
