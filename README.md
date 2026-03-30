@@ -6,6 +6,8 @@
 
 # PulseFit Website
 
+Live Demo: Coming soon
+
 A full-stack fitness coaching website built as a realistic client-style portfolio project.
 
 ## Overview
@@ -39,6 +41,17 @@ PulseFit is a responsive business website for a fitness coaching brand. It inclu
 ## Purpose
 
 This project was built to simulate a real client website for a fitness coaching business, while demonstrating front-end, back-end, and full-stack integration skills.
+
+## What I Built
+
+This project demonstrates my ability to:
+
+- Design and build a responsive modern UI
+- Create a backend API using Node.js and Express
+- Handle real-world form submissions
+- Implement email automation using Nodemailer
+- Manage environment variables securely
+- Structure a full-stack project from frontend to backend
 
 ## Future Improvements
 
