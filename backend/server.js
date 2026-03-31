@@ -4,27 +4,21 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
+
 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 const submissionsFile = path.join(__dirname, "submissions.json");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors());
 app.use(express.json());
 
-// ✅ transporter FIRST
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false, // IMPORTANT (true = 465, false = 587)
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+
+
 
 app.get("/", (req, res) => {
   res.send("PulseFit backend is running.");
@@ -63,34 +57,30 @@ app.post("/contact", async (req, res) => {
   // ✅ SEND EMAIL INSIDE ROUTE
 try {
   // Email to YOU
-  await transporter.sendMail({
-    from: `"PulseFit Website" <${process.env.EMAIL_USER}>`,
-    to: process.env.EMAIL_USER,
+  await resend.emails.send({
+    from: "PulseFit <onboarding@resend.dev>",
+    to: ["isaac.s.baku@gmail.com"],
     subject: "New PulseFit Client",
-    text: `
-Name: ${name}
-Email: ${email}
-Goal: ${goal}
-Message: ${message}
+    html: `
+      <h2>New PulseFit Client</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Goal:</strong> ${goal}</p>
+      <p><strong>Message:</strong> ${message}</p>
     `,
   });
 
   // Confirmation email to USER
-  await transporter.sendMail({
-    from: `"PulseFit" <${process.env.EMAIL_USER}>`,
-    to: email,
+  await resend.emails.send({
+    from: "PulseFit <onboarding@resend.dev>",
+    to: [email],
     subject: "We received your request 💪",
-    text: `
-Hey ${name},
-
-Thanks for reaching out to PulseFit!
-
-We received your request and will get back to you shortly.
-
-Your goal: ${goal}
-
-Stay strong 💪
-PulseFit Team
+    html: `
+      <p>Hey ${name},</p>
+      <p>Thanks for reaching out to <strong>PulseFit</strong>.</p>
+      <p>We received your request and will get back to you shortly.</p>
+      <p><strong>Your goal:</strong> ${goal}</p>
+      <p>Stay strong 💪<br/>PulseFit Team</p>
     `,
   });
 
