@@ -7,10 +7,12 @@ const mobileLinks = document.querySelectorAll(".mobile-menu a");
 // REVEAL ON SCROLL
 function revealOnScroll() {
   const windowHeight = window.innerHeight;
+  const revealPoint = 100;
 
   reveals.forEach((section) => {
+    if (section.classList.contains("active")) return;
+
     const elementTop = section.getBoundingClientRect().top;
-    const revealPoint = 100;
 
     if (elementTop < windowHeight - revealPoint) {
       section.classList.add("active");
@@ -20,7 +22,7 @@ function revealOnScroll() {
       items.forEach((item, index) => {
         setTimeout(() => {
           item.classList.add("active");
-        }, index * 250);
+        }, index * 180);
       });
     }
   });

@@ -60,6 +60,11 @@ This project demonstrates my ability to:
 - Add admin dashboard for submissions
 - Improve branded HTML email templates
 
+## Notes
+
+Email functionality is implemented using Resend API.
+Domain verification can be added for full production email delivery.
+
 ## Author
 
 Isaac Baku
