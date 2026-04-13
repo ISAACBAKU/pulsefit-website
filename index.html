@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PulseFit Coaching</title>
   <link rel="stylesheet" href="style/style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
   
 </head>
 
@@ -14,7 +18,10 @@
   <!-- NAVBAR -->
   <header class="header">
     <nav class="navbar">
-      <div class="logo">PulseFit</div>
+      <div class="logo">
+        PulseFit
+         <!--<img src="images/logo.PNG" alt="PulseFit Logo" />-->
+      </div>
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -143,28 +150,60 @@
   </section>
 
   <!-- FOOTER / CONTACT -->
-  <footer id="contact" class="footer reveal">
-  <div class="container footer-content">
-    <div class="reveal-item">
-      <h3>PulseFit</h3>
-      <p>Personal coaching built for real results.</p>
+<footer id="contact" class="footer reveal">
+  <div class="container contact-section">
+    <div class="contact-image-wrap reveal-item">
+      <img src="images/contact-image.png" alt="Personal training session" class="contact-image" />
     </div>
 
-    <div class="contact-form-wrap reveal-item">
-      <h4>Contact</h4>
+    <div class="contact-content reveal-item">
+      <p class="section-label">CONTACT</p>
+      <h2>Start your transformation today.</h2>
+      <p class="contact-text">
+        Tell us about your goals and we’ll help you build a plan that fits your lifestyle,
+        your schedule, and your fitness level.
+      </p>
 
       <form id="contact-form" class="contact-form">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Your email" required />
         <input type="text" name="goal" placeholder="Your fitness goal" required />
-        <textarea name="message" placeholder="Tell us a bit about what you want to achieve" rows="5" required></textarea>
+        <textarea
+          name="message"
+          placeholder="Tell us a bit about what you want to achieve"
+          rows="5"
+          required
+        ></textarea>
+
+        <label class="checkbox-wrap">
+          <input type="checkbox" name="updates" />
+          <span>I agree to receive coaching updates and occasional offers.</span>
+        </label>
+
         <button type="submit" class="hero-btn">Send Message</button>
       </form>
 
+      <p class="contact-note">No pressure. Just a first conversation about your goals.</p>
+
+        <div class="social-links">
+          <p class="social-title">Follow us</p>
+
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <!--<a href="#"><i class="fab fa-x-twitter"></i></a>-->
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <!--<a href="mailto:youremail@gmail.com">-->
+              <!--<i class="fas fa-envelope"></i>-->
+            </a>
+          </div>
+        </div>
       <p id="form-status"></p>
     </div>
   </div>
-  </footer>
+</footer>
 
   <script src="js/script.js"></script>
 
